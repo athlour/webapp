@@ -94,7 +94,6 @@ def employee():
     }
 
 
-    # Using make_response
     response = make_response(response_body)
     response.status_code = 200
     return response
