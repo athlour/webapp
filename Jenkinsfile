@@ -6,7 +6,7 @@ pipeline {
             steps {
                 // Checkout the source code from your version control system (e.g., Git)
                 script {
-                    git 'https://github.com/athlour/webapp.git'
+                    bat 'git clone https://github.com/athlour/webapp.git'
                 }
             }
         }
@@ -15,8 +15,8 @@ pipeline {
             steps {
                 // Install Python dependencies using a virtual environment
                 script {
-                    sh 'python3 -m venv venv'
-                    sh 'source venv/bin/activate && pip install -r requirements.txt'
+                    bat 'python -m venv venv'
+                    bat '.\\venv\\Scripts\\activate && pip install -r requirements.txt'
                 }
             }
         }
@@ -25,7 +25,7 @@ pipeline {
             steps {
                 // Run your unit tests
                 script {
-                    sh 'source venv/bin/activate && pytest'
+                    bat '.\\venv\\Scripts\\activate && pytest'
                 }
             }
         }
@@ -34,7 +34,7 @@ pipeline {
             steps {
                 // Build and deploy your Flask application
                 script {
-                    sh 'source venv/bin/activate && python your_flask_app.py &'
+                    bat '.\\venv\\Scripts\\activate && python your_flask_app.py'
                     // Add additional deployment steps as needed
                 }
             }
@@ -45,8 +45,8 @@ pipeline {
         always {
             // Clean up after the build
             script {
-                sh 'killall -9 python'
-                sh 'rm -rf venv'
+                bat 'taskkill /F /IM python.exe'
+                bat 'rmdir /s /q venv'
             }
         }
     }
