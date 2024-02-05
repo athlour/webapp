@@ -70,9 +70,10 @@ def login():
     return response,200
 
 
-@app.route("/emp", methods=["GET"])
+@app.route("/emp", methods=["GET","POST"])
 @verify_jwt_token
 def employee():
+    if methods=="GET"
     response_body = {
         "employee": {
         "id": 12345,
