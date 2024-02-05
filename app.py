@@ -93,11 +93,10 @@ def employee():
         "isFullTime": "true",}
     }
 
-    status_code = 201  # 201 Created
 
     # Using make_response
     response = make_response(response_body)
-    response.status_code = status_code
+    response.status_code = 200
 
     # Alternatively, return a tuple directly
     # return response_body, status_code
