@@ -98,8 +98,6 @@ def employee():
     response = make_response(response_body)
     response.status_code = 200
 
-    # Alternatively, return a tuple directly
-    # return response_body, status_code
 
     return response
 
