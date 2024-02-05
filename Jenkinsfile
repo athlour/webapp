@@ -25,7 +25,7 @@ pipeline {
             steps {
                 // Run your unit tests
                 script {
-                    bat '.\\venv\\Scripts\\activate && pytest'
+                    bat '.\\venv\\Scripts\\activate && pytest test_app.py'
                 }
             }
         }
