@@ -35,6 +35,7 @@ pipeline {
                 // Build and deploy your Flask application
                 script {
                     bat '.\\venv\\Scripts\\activate && app.py'
+                    bat 'python app.py'
                     // Add additional deployment steps as needed
                 }
             }
