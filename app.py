@@ -9,6 +9,7 @@ app = Flask(__name__)
 
 def decode_credentials():
     auth_header = request.headers.get('Authorization')
+    print(auth_header)
     if auth_header and auth_header.startswith('Basic '):
         # Extract the base64-encoded part
         encoded_credentials = auth_header[len('Basic '):]
