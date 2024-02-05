@@ -72,7 +72,26 @@ def login():
 @app.route("/emp", methods=["GET"])
 @verify_jwt_token
 def employee():
-    response_body = 'This is a custom response'
+    response_body = {
+        "employee": {
+        "id": 12345,
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "john.doe@example.com",
+        "phone": "+1 (555) 123-4567",
+        "address": {
+        "street": "123 Main Street",
+        "city": "Anytown",
+        "state": "CA",
+        "zipCode": "12345"
+        },
+        "position": "Software Engineer",
+        "department": "Engineering",
+        "salary": 80000,
+        "startDate": "2023-01-15",
+        "isFullTime": "true",}
+    }
+
     status_code = 201  # 201 Created
 
     # Using make_response
@@ -83,8 +102,6 @@ def employee():
     # return response_body, status_code
 
     return response
-
-
 
 
 
