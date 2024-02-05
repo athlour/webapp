@@ -37,8 +37,7 @@ pipeline {
                 script {
 
                     bat 'start /B .\\venv\\Scripts\\activate && python app.py'
-
-                    // Add additional deployment steps as needed
+                    // Add additional deployment steps as needed write the steps here
                 }
             }
         }
